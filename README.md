@@ -48,7 +48,7 @@ Add the component to your template
     {% componentend%}
 </div>
 ```
-_Note: You can use a variable instead of entering "component.html, useful for reusable components"_
+_Note: You can use a variable instead of entering "component.html", useful for reusable components_
 
 You can add tags or any other nunjucks markup inside your component
 ``` html
