@@ -28,6 +28,7 @@ Create a component to add to your templates
 
 ``` html
 <!-- component.html !-->
+
 <div>
     <slot>This slot will be replaced with content</slot>
 </div>
@@ -38,22 +39,32 @@ Add the component to your template
 
 ``` html
 <!-- template.html !-->
-{% component "component.html" %}
-    This is some text to fill the slot!
-{% componentend%}
+
+<h1>Welcome to my website!</h1>
+
+<div>
+    {% component "component.html" %}
+        This is some text to fill the slot!
+    {% componentend%}
+</div>
 ```
-_Note: You can use a variable instad of entering "component.html, useful for reusable components"_
+_Note: You can use a variable instead of entering "component.html, useful for reusable components"_
 
 You can add tags or any other nunjucks markup inside your component
 ``` html
 <!-- template.html !-->
+
 {% set myComponent = "component.html" %}
 {% set user = "Cody" %}
 
-{% component myComponent %}
-    Hello {{ user }}
-    This is some text to fill the slot!
-{% componentend%}
+<h1>Welcome to my website!</h1>
+
+<div>
+    {% component myComponent %}
+        Hello {{ user }}
+        This is some text to fill the slot!
+    {% componentend%}
+</div>
 ```
 
 ### Passing Data
@@ -62,16 +73,22 @@ You can pass variables, which will only be accessible within the component
 
 ``` html
 <!-- template.html !-->
+
 {% set myComponent = "component.html" %}
 {% set user = "Cody" %}
 
-{% component myComponent,title="My Component",user=user %}
-    This is some text to fill the slot!
-{% componentend%}
+<h1>Welcome to my website!</h1>
+
+<div>
+    {% component myComponent,title="My Component",user=user %}
+        This is some text to fill the slot!
+    {% componentend%}
+</div>
 ```
 
 ``` html
 <!-- component.html !-->
+
 <div>
     {{ title }} for {{ user }}
     <slot>This slot will be replaced with content</slot>
