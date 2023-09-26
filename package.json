@@ -1,7 +1,7 @@
 {
   "name": "nunjucks-components",
   "type":"commonjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Nunjucks Extension that enables components with slots.",
   "main": "index.js",
   "scripts": {
